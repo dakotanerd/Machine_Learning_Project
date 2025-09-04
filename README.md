@@ -1,6 +1,6 @@
 # Chat
 
-The chat tool allows us to interact with a language model inside of the GitLab runners with no special hardware! It is based on [Microsoft's BitNet Project](https://github.com/microsoft/BitNet?tab=readme-ov-file#build-from-source) and uses the [BitNet-b1.58-2B-4T](https://huggingface.co/microsoft/BitNet-b1.58-2B-4T) model with special [terenary quantization](https://arxiv.org/abs/2502.11880) to run efficently on CPU.
+The chat tool allows us to interact with a language model inside of the GitHub runners with no special hardware! It is based on [Microsoft's BitNet Project](https://github.com/microsoft/BitNet?tab=readme-ov-file#build-from-source) and uses the [BitNet-b1.58-2B-4T](https://huggingface.co/microsoft/BitNet-b1.58-2B-4T) model with special [terenary quantization](https://arxiv.org/abs/2502.11880) to run efficently on CPU.
 
 ### :warning: Warning
 
