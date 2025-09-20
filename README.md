@@ -22,6 +22,8 @@ If you've build the container locally, you can run the `chat` command with a pro
 
 ```
 docker run -it chat:latest chat "What is a CVE?"
+docker run -it --user $(id -u):$(id -g) chat:latest /bin/bash
+
 ```
 
 The [gitlab-ci.yml](/.gitlab-ci.yml) also contains the job `post-build-test` which provides an example using the container in a CI/CD pipeline.
