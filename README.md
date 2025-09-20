@@ -22,7 +22,7 @@ If you've build the container locally, you can run the `chat` command with a pro
 
 ```
 docker run -it chat:latest chat "What is a CVE?"
-docker run -it --user $(id -u):$(id -g) chat:latest /bin/bash
+docker run -it --user modeluser chat:latest bash
 
 ```
 
