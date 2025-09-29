@@ -1,0 +1,10 @@
+.
+├── app.py
+├── static
+│   ├── script.js
+│   └── style.css
+├── structure
+└── templates
+    └── index.html
+
+3 directories, 5 files

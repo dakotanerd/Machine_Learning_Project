@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat LLM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="header">
+    <h1>🤖 Chat LLM Interface</h1>
+  </div>
+
+  <div class="chat-container" id="chatContainer">
+    <div class="conversation-header" id="conversationHeader">
+      <div class="conversation-title" id="conversationTitle"></div>
+      <div class="conversation-date" id="conversationDate"></div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <div class="input-container">
+      <button id="historyButton" class="history-button">📜</button>
+      <input type="text" id="messageInput" class="input-field" placeholder="Type your message..." autofocus>
+      <button id="sendButton" class="send-button">Send</button>
+      <button id="voiceButton" class="voice-button">🎤</button>
+
+      <!-- Upload button -->
+      <form id="uploadForm" style="display:inline-block;" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="files" multiple webkitdirectory directory>
+        <button type="submit" class="send-button">📁 Upload</button>
+      </form>
+
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const files = document.getElementById("fileInput").files;
+      if (files.length === 0) return alert("Select files or a folder first.");
+
+      const formData = new FormData();
+      for (let i = 0; i < files.length; i++) formData.append("files", files[i]);
+
+      try {
+        const response = await fetch("/upload", { method: "POST", body: formData });
+        const data = await response.json();
+
+        if (!data.results) return alert("No results returned from server.");
+
+        data.results.forEach(res => {
+          
+          const findingsHTML = findings.map(f => `
+            <div class="finding">
+              ${f.type ? `<strong>Type:</strong> ${f.type}<br>` : ""}
+              ${f.language ? `<strong>Type:</strong> ${language}<br>` : ""}
+              ${f.severity ? `<strong>Severity:</strong> <span class="severity-${f.severity}">${f.severity}</span><br>` : ""}
+              ${f.line ? `<strong>Line:</strong> ${f.line}<br>` : ""}
+              ${f.problem_line ? `<strong>Problem line:</strong> <code>${f.problem_line}</code><br>` : ""}
+              ${f.fix ? `<strong>Fix:</strong> ${f.fix}<br>` : ""}
+              ${f.ai_suggestion ? `<strong>AI Suggestion:</strong> ${f.ai_suggestion}<br>` : ""}
+              ${f.note ? `<em>${f.note}</em>` : ""}
+            </div>
+          `).join('');
+
+          const div = document.createElement("div");
+          div.className = "message ai";
+          div.innerHTML = `
+         <div class="message-content file-result" style="font-size:0.85em; margin-bottom:4px;">
+          <div style="margin-bottom:2px;">
+            <strong>${res.file}</strong> — 
+            <strong>Lines:</strong> ${line_count}, 
+            <strong>Language:</strong> ${language}, 
+            <strong>Size:</strong> ${file_size} bytes, 
+            <strong>Severity:</strong> ${Object.entries(severity_summary)
+              .map(([k,v]) => `<span class="severity-${k}" style="margin-right:5px;">${k}: ${v}</span>`)
+              .join('')}
+          </div>
+          <details style="color:#e0e0e0; margin-top:2px;">
+            <summary>Findings (${findings.length})</summary>
+            ${findingsHTML}
+          </details>  
+        </div>  
+          `;
+          chatContainer.appendChild(div);
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        });
+
+      } catch (err) {
+        console.error("Upload failed:", err);
+        alert("Upload failed. See console for details.");
+      }
+    });
+  </script>
+</body>
+</html>
