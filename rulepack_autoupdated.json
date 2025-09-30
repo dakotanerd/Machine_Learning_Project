@@ -1,0 +1,297 @@
+{
+  ".py": [
+    {
+      "pattern": "\\beval\\s*\\(",
+      "description": "Use of eval()",
+      "severity": "High",
+      "cwe": [
+        "CWE-94"
+      ],
+      "owasp": [
+        "A1: Injection"
+      ],
+      "fix": "Avoid eval()",
+      "reward_score": 0.5133420832795047
+    },
+    {
+      "pattern": "\\bexec\\s*\\(",
+      "description": "Use of exec()",
+      "severity": "High",
+      "cwe": [
+        "CWE-94"
+      ],
+      "owasp": [
+        "A1: Injection"
+      ],
+      "fix": "Avoid exec()",
+      "reward_score": 0.5133420832795047
+    },
+    {
+      "pattern": "print\\(\"Result\\ of\\ eval:\",\\ eval\\(user_input\\)\\)",
+      "description": "Auto-learned: print\\(\"Result\\ of\\ eval:\",\\ eval\\(user_input\\)\\)",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid using eval; sanitize inputs.",
+      "reward_score": 10.733158334409895
+    },
+    {
+      "pattern": "print\\(eval\\(data\\)\\)\\ \\ \\#\\ This\\ is\\ very\\ unsafe!",
+      "description": "Auto-learned: print\\(eval\\(data\\)\\)\\ \\ \\#\\ This\\ is\\ very\\ unsafe!",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid using eval; sanitize inputs.",
+      "reward_score": 10.733158334409895
+    },
+    {
+      "pattern": "eval\\(user_code\\)\\ \\ \\#\\ Dangerous:\\ arbitrary\\ code\\ execution",
+      "description": "Auto-learned: eval\\(user_code\\)\\ \\ \\#\\ Dangerous:\\ arbitrary\\ code\\ execution",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid using eval; sanitize inputs.",
+      "reward_score": 11.683158334409896
+    },
+    {
+      "pattern": "exec\\(command\\)\\ \\ \\#\\ Dangerous:\\ arbitrary\\ code\\ execution",
+      "description": "Auto-learned: exec\\(command\\)\\ \\ \\#\\ Dangerous:\\ arbitrary\\ code\\ execution",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid using exec; sanitize inputs.",
+      "reward_score": 11.683158334409896
+    },
+    {
+      "pattern": "subprocess\\.run\\(cmd,\\ shell=True\\)\\ \\ \\#\\ shell=True\\ is\\ unsafe",
+      "description": "Auto-learned: subprocess\\.run\\(cmd,\\ shell=True\\)\\ \\ \\#\\ shell=True\\ is\\ unsafe",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use list args and avoid shell=True.",
+      "reward_score": 11.683158334409896
+    },
+    {
+      "pattern": "data\\ =\\ pickle\\.load\\(f\\)\\ \\ \\#\\ Unsafe\\ if\\ file\\ is\\ untrusted",
+      "description": "Auto-learned: data\\ =\\ pickle\\.load\\(f\\)\\ \\ \\#\\ Unsafe\\ if\\ file\\ is\\ untrusted",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid deserializing untrusted input.",
+      "reward_score": 11.683158334409896
+    },
+    {
+      "pattern": "r\\ =\\ requests\\.get\\(\"https://example\\.com\",\\ verify=False\\)\\ \\ \\#\\ TLS\\ verification\\ disabled",
+      "description": "Auto-learned: r\\ =\\ requests\\.get\\(\"https://example\\.com\",\\ verify=False\\)\\ \\ \\#\\ TLS\\ verification\\ disabled",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Enable certificate verification.",
+      "reward_score": 11.683158334409896
+    },
+    {
+      "pattern": "Detected\\ dependency\\ reference\\ to\\ 'requests'",
+      "description": "Auto-learned: Detected\\ dependency\\ reference\\ to\\ 'requests'",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Ensure TLS verification is enabled and certificates are validated.",
+      "reward_score": 11.683158334409896
+    }
+  ],
+  ".js": [
+    {
+      "pattern": "\\beval\\s*\\(",
+      "description": "Use of eval()",
+      "severity": "High",
+      "cwe": [
+        "CWE-95"
+      ],
+      "owasp": [
+        "A1: Injection"
+      ],
+      "fix": "Avoid eval()",
+      "reward_score": 0.5133420832795047
+    }
+  ],
+  ".generic": [],
+  ".c++": [
+    {
+      "pattern": "std::string\\ apiKey\\ =\\ \"API_KEY_12345\";",
+      "description": "Auto-learned: std::string\\ apiKey\\ =\\ \"API_KEY_12345\";",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Move secrets to environment variables or a secrets manager.",
+      "reward_score": 9.733158334409895
+    }
+  ],
+  ".c": [
+    {
+      "pattern": "//\\ Vulnerability\\ 1:\\ Buffer\\ overflow\\ with\\ gets\\(\\)",
+      "description": "Auto-learned: //\\ Vulnerability\\ 1:\\ Buffer\\ overflow\\ with\\ gets\\(\\)",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use fgets with size limits.",
+      "reward_score": 19.46631666881979
+    },
+    {
+      "pattern": "gets\\(input\\);\\ \\ //\\ unsafe",
+      "description": "Auto-learned: gets\\(input\\);\\ \\ //\\ unsafe",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use fgets with size limits.",
+      "reward_score": 19.46631666881979
+    },
+    {
+      "pattern": "sprintf\\(cmd,\\ \"echo\\ Hello\\ %s\",\\ users\\[0\\]\\.username\\);\\ //\\ vulnerable\\ to\\ injection",
+      "description": "Auto-learned: sprintf\\(cmd,\\ \"echo\\ Hello\\ %s\",\\ users\\[0\\]\\.username\\);\\ //\\ vulnerable\\ to\\ injection",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use snprintf with buffer limits.",
+      "reward_score": 19.46631666881979
+    },
+    {
+      "pattern": "std::string\\ apiKey\\ =\\ \"API_KEY_12345\";",
+      "description": "Auto-learned: std::string\\ apiKey\\ =\\ \"API_KEY_12345\";",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Move secrets to environment variables or a secrets manager.",
+      "reward_score": 9.733158334409895
+    }
+  ],
+  ".java": [
+    {
+      "pattern": "String\\ query\\ =\\ \"SELECT\\ \\*\\ FROM\\ users\\ WHERE\\ username\\ =\\ '\"\\ \\+\\ input\\ \\+\\ \"';\";",
+      "description": "Auto-learned: String\\ query\\ =\\ \"SELECT\\ \\*\\ FROM\\ users\\ WHERE\\ username\\ =\\ '\"\\ \\+\\ input\\ \\+\\ \"';\";",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use prepared statements instead of string concatenation.",
+      "reward_score": 19.46631666881979
+    },
+    {
+      "pattern": "String\\ query\\ =\\ \"SELECT\\ \\*\\ FROM\\ users\\ WHERE\\ username\\ =\\ '\"\\ \\+\\ username\\ \\+\\ \"';\";",
+      "description": "Auto-learned: String\\ query\\ =\\ \"SELECT\\ \\*\\ FROM\\ users\\ WHERE\\ username\\ =\\ '\"\\ \\+\\ username\\ \\+\\ \"';\";",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Use prepared statements instead of string concatenation.",
+      "reward_score": 19.46631666881979
+    },
+    {
+      "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(code\\);",
+      "description": "Auto-learned: Runtime\\.getRuntime\\(\\)\\.exec\\(code\\);",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid dynamic command execution; sanitize inputs.",
+      "reward_score": 18.925956581157152
+    }
+  ],
+  ".php": [
+    {
+      "pattern": "if\\(isset\\(\\$_POST\\['username'\\]\\)\\ \\&\\&\\ isset\\(\\$_POST\\['password'\\]\\)\\)\\{",
+      "description": "Auto-learned: if\\(isset\\(\\$_POST\\['username'\\]\\)\\ \\&\\&\\ isset\\(\\$_POST\\['password'\\]\\)\\)\\{",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 33.52483196217721
+    },
+    {
+      "pattern": "\\$u\\ =\\ \\$_POST\\['username'\\];",
+      "description": "Auto-learned: \\$u\\ =\\ \\$_POST\\['username'\\];",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 17.75841954964232
+    },
+    {
+      "pattern": "\\$p\\ =\\ \\$_POST\\['password'\\];",
+      "description": "Auto-learned: \\$p\\ =\\ \\$_POST\\['password'\\];",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 17.75841954964232
+    },
+    {
+      "pattern": "if\\(isset\\(\\$_GET\\['file'\\]\\)\\)\\{",
+      "description": "Auto-learned: if\\(isset\\(\\$_GET\\['file'\\]\\)\\)\\{",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 16.464749708628645
+    },
+    {
+      "pattern": "\\$filename\\ =\\ \\$_GET\\['file'\\];",
+      "description": "Auto-learned: \\$filename\\ =\\ \\$_GET\\['file'\\];",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 16.464749708628645
+    },
+    {
+      "pattern": "\\$prefs\\ =\\ unserialize\\(\\$_COOKIE\\['prefs'\\]\\);\\ //\\ unsafe\\ deserialization",
+      "description": "Auto-learned: \\$prefs\\ =\\ unserialize\\(\\$_COOKIE\\['prefs'\\]\\);\\ //\\ unsafe\\ deserialization",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Avoid unserializing untrusted data.",
+      "reward_score": 16.464749708628645
+    },
+    {
+      "pattern": "\\$stmt\\->bind_param\\(\"ss\",\\ \\$_POST\\['username'\\],\\ \\$_POST\\['password'\\]\\);\\ //\\ safe",
+      "description": "Auto-learned: \\$stmt\\->bind_param\\(\"ss\",\\ \\$_POST\\['username'\\],\\ \\$_POST\\['password'\\]\\);\\ //\\ safe",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 15.766412412534894
+    },
+    {
+      "pattern": "move_uploaded_file\\(\\$file\\['tmp_name'\\],\\ \\$uploadDir\\.\\$filename\\);",
+      "description": "Auto-learned: move_uploaded_file\\(\\$file\\['tmp_name'\\],\\ \\$uploadDir\\.\\$filename\\);",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate file type and path before moving.",
+      "reward_score": 14.257539584409896
+    },
+    {
+      "pattern": "\\$output\\ =\\ shell_exec\\(\\$_GET\\['cmd'\\]\\);\\ //\\ command\\ execution",
+      "description": "Auto-learned: \\$output\\ =\\ shell_exec\\(\\$_GET\\['cmd'\\]\\);\\ //\\ command\\ execution",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 12.585658334409894
+    },
+    {
+      "pattern": "if\\(isset\\(\\$_GET\\['cmd'\\]\\)\\)\\{",
+      "description": "Auto-learned: if\\(isset\\(\\$_GET\\['cmd'\\]\\)\\)\\{",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Validate and sanitize all user input.",
+      "reward_score": 12.585658334409894
+    },
+    {
+      "pattern": "\\$password\\ =\\ \"password123\";",
+      "description": "Auto-learned: \\$password\\ =\\ \"password123\";",
+      "severity": "High",
+      "cwe": [],
+      "owasp": [],
+      "fix": "Do not store passwords in source code.",
+      "reward_score": 12.585658334409894
+    }
+  ]
+}

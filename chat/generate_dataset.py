@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_dataset_selflearning.py — Dataset generator with integrated self-learning
+generate_dataset.py — Dataset generator with integrated self-learning and safe code suggestions
 """
 
 from __future__ import annotations
@@ -8,11 +8,10 @@ import argparse
 import csv
 import json
 import logging
-import os
 import re
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Optional
 
 # Optional YAML support
 try:
@@ -30,6 +29,7 @@ BASE_SAMPLE_DIR = "code_samples"
 DEFAULT_OUTPUT = "vuln_dataset.jsonl"
 CSV_OUTPUT = "vuln_dataset.csv"
 CANDIDATES_FILE = "candidates.jsonl"
+SAFE_SNIPPETS_FILE = "safe_snippets.json"
 MAX_PROMPT_LINES = 400
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 
@@ -59,6 +59,26 @@ class Entry:
     prompt: str
     completion: str
     vulnerabilities: List[Dict]
+
+# ---------------------------
+# Safe snippet functions
+# ---------------------------
+def load_safe_snippets():
+    if Path(SAFE_SNIPPETS_FILE).exists():
+        with open(SAFE_SNIPPETS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_safe_snippets(snippets: dict):
+    with open(SAFE_SNIPPETS_FILE, "w", encoding="utf-8") as f:
+        json.dump(snippets, f, indent=2, ensure_ascii=False)
+
+def learn_safe_snippet(pattern: str, language: str, snippet: str):
+    snippets = load_safe_snippets()
+    if language not in snippets:
+        snippets[language] = {}
+    snippets[language][pattern] = snippet
+    save_safe_snippets(snippets)
 
 # ---------------------------
 # Rule loading
@@ -123,7 +143,7 @@ def ai_update_rulepack(candidates_path: str, rulepack_path: Optional[str] = None
                 "reward_score": 1.0
             })
             rulepack[ext] = lang_rules
-            added_count += 1
+            updated_count += 1
 
     out_path = Path(rulepack_path or "rulepack_autoupdated.json")
     try:
@@ -160,30 +180,28 @@ def process_file(path: Path, rulepack: Dict[str, List[Dict]]):
     except Exception:
         return None
 
-    # Run heuristics from heuristics.py
-    vuln_findings = run_heuristics(detect_language(path), content, lines)
+    lang = detect_language(path)
+    vuln_findings = run_heuristics(lang, content, lines)
 
-    # Convert heuristics output to candidate patterns
     candidates = []
     for f in vuln_findings:
-        if "type" in f and f["severity"] in {"High", "Critical"}:
+        if "type" in f and f.get("severity") in {"High", "Critical"}:
             pattern = re.escape(f.get("problem_line", f.get("type", "")))
             candidates.append({
                 "candidate_pattern": pattern,
                 "example_context": f.get("problem_line", ""),
                 "file": str(path),
                 "line": f.get("line"),
-                "note": f.get("ai_suggestion") or f.get("type"),
                 "severity": f.get("severity"),
                 "fix": f.get("fix", "")
             })
 
-    prompt = f"Analyze {detect_language(path)} code:\n{content}"
+    prompt = f"Analyze {lang} code:\n{content}"
     completion = "\n".join([f"{f.get('type','')} ({f.get('severity','?')}) [line:{f.get('line')}]" for f in vuln_findings]) or "No issues found"
 
     entry = Entry(
         file=str(path),
-        language=detect_language(path),
+        language=lang,
         size=len(content.encode("utf-8")),
         line_count=len(content.splitlines()),
         prompt=prompt,
@@ -252,12 +270,11 @@ def run_scan(rulepack_path: Optional[str], include_root: bool, out_path: str, ap
     write_csv(entries, Path(CSV_OUTPUT))
 
     if append_candidates and all_candidates:
-        # Deduplicate candidates
-        unique_candidates = { (c['file'], c['candidate_pattern']): c for c in all_candidates }
-        with Path(CANDIDATES_FILE).open("a", encoding="utf-8") as fh:
+        unique_candidates = {(c['file'], c['candidate_pattern']): c for c in all_candidates}
+        with Path(CANDIDATES_FILE).open("w", encoding="utf-8") as fh:
             for c in unique_candidates.values():
                 fh.write(json.dumps(c, ensure_ascii=False) + "\n")
-        logging.info("Appended %d unique candidate patterns", len(unique_candidates))
+        logging.info("Wrote %d unique candidate patterns", len(unique_candidates))
         if ai_scan:
             ai_update_rulepack(CANDIDATES_FILE, rulepack_path)
 

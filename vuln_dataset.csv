@@ -1,0 +1,79 @@
+file,language,size,line_count,vuln_count,top_vulns
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/.gitignore,.generic,4471,206,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/Dockerfile,Dockerfile,2757,92,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/Dockerfile2.txt,.txt,2757,92,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/README.md,.md,3019,134,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/candidates.jsonl,.jsonl,1141,3,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/chat1.py,.py,12818,362,3,TLS verification disabled; Unsafe deserialization
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/chat2.py,.py,20219,400,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/chat_log.jsonl,.jsonl,90011,133,12,TLS verification disabled; Unsafe deserialization
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/Bad_Test1.java,.java,2145,72,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c1.c++,.c++,178,9,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c2.c++,.c++,192,9,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c3.c++,.c++,160,7,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c4.c++,.c++,160,7,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c5.c++,.c++,157,9,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/c6.c++,.c++,1453,46,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/cpp_multi1.cpp,.cpp,460,24,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C++/cpp_multi2.cpp,.cpp,259,13,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c2.c,.c,134,7,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c3.c,.c,135,6,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c4.c,.c,135,7,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c5.c,.c,115,6,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c6.c,.c,1684,59,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c_multi1.c,.c,443,21,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c_multi2.c,.c,175,12,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/C_samples/c_sample1.c,.c,174,8,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/Go/g1.go,.go,1677,62,1,Potential log format injection
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p1.php,.php,1660,68,1,Use of MD5
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p2.php,.php,991,41,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p3.php,.php,754,37,1,Use of MD5
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p4.php,.php,766,37,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p5.php,.php,733,29,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/PHP/p6.php,.php,1192,37,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/Ruby/r1.rb,.rb,716,35,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/SafeTest1.java,.java,1491,56,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/bad_test.c,.c,856,40,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/c5.c++,.c++,157,9,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/c5_1.c++,.c++,157,9,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/good1.c++,.c++,2851,95,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaMulti1.java,.java,575,17,1,Hardcoded password
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaMulti2.java,.java,221,10,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/Main.java,.java,845,25,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/NetworkClient.java,.java,1020,32,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/SecureUtils.java,.java,574,21,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/TransactionProcessor.java,.java,609,19,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/User.java,.java,402,19,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/UserManager.java,.java,1176,43,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/JavaVulnProject/src/VulnerableUtils.java,.java,839,29,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/SQLTest1.java,.java,804,25,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/SQLTest2.java,.java,882,29,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j2.java,.java,153,6,1,Hardcoded password
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j3.java,.java,254,7,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j4.java,.java,271,8,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j5.java,.java,134,6,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j6.java,.java,2191,73,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j7.java,.java,1735,65,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/j8.java,.java,1528,43,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/java_test1.java,.java,143,6,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/java_samples/java_tests/j2.java,.java,153,6,1,Hardcoded password
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p2.py,.py,62,2,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p3.py,.py,52,2,1,Hardcoded password
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p4.py,.py,88,2,1,Unsafe deserialization
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p5.py,.py,94,2,2,Dependency: requests; TLS verification disabled
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p6.py,.py,4113,146,6,Dependency: requests; Hardcoded secret/token; TLS verification disabled
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/p7.py,.py,3434,89,1,Unsafe deserialization
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/py_multi1.py,.py,396,16,4,Dependency: requests; Hardcoded password; TLS verification disabled
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/py_multi2.py,.py,100,6,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/python_test1.py,.py,70,3,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/sql_injection1.py,.py,379,18,1,Hardcoded password
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/python_samples/sql_injection2.py,.py,302,15,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/safe_test.c,.c,1367,58,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/test_bad.c++,.c++,411,20,1,Hardcoded secret/token
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/tests_c_tests_bad_test.c,.c,856,40,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/tests_c_tests_bad_test_1.c,.c,856,40,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/tests_c_tests_good1.c,.c,2851,95,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/code_samples/tests_c_tests_test_bad.c,.c,411,20,1,Hardcoded secret/token
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/requirements.txt,.txt,33,3,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/vuln_dataset.csv,.csv,11803,77,1,
+/mnt/c/Users/Owner/Downloads/ML_Project/Machine_Learning_Project-main/Machine_Learning_Project-main/vuln_dataset.jsonl,.jsonl,952509,76,22,Path traversal sequence; Potential log format injection; TLS verification disabled

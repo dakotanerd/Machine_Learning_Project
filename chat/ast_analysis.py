@@ -17,7 +17,7 @@ def python_ast_analysis(content, lines):
                         "problem_line": problem_line.strip(),
                         "fix": f"Avoid using {func}; sanitize inputs.",
                         "line": node.lineno,
-                        "ai_suggestion": ""
+                        
                     })
     except Exception:
         pass
