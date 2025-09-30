@@ -1,6 +1,6 @@
 # Chat LLM BitNet Vulnerability Analyzer
 
-**BitNet** is a local code vulnerability analyzer that uses both **heuristic checks** and an optional **dataset-based matching** system to identify potential security issues in code. It supports multiple programming languages and can scan individual files, entire folders, or code snippets.
+**Chat** is a local code vulnerability analyzer that uses both **heuristic checks** and an optional **dataset-based matching** system to identify potential security issues in code. It supports multiple programming languages and can scan individual files, entire folders, or code snippets.
 
 This tool is designed to help developers and security researchers quickly detect common vulnerabilities such as SQL injection, buffer overflows, unsafe file handling, and insecure coding patterns.
 
@@ -31,8 +31,8 @@ This tool is designed to help developers and security researchers quickly detect
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/BitNet.git
-   cd BitNet
+   git clone https://github.com/yourname/Machine_Learning_Project.git
+   cd Machine_Learning_Project
    ```
 2. Ensure you have Python 3 installed.
 3. Install required packages (if any):
@@ -42,14 +42,54 @@ This tool is designed to help developers and security researchers quickly detect
    ```
 4. (Optional) Add your dataset in `vuln_dataset.jsonl` for dataset-based matching.
 
----
-
 ## Usage
+
+# 3 diffrent types of use:
+1. Docker LLM (using chat1.py or chat2.py)
+2. Web Page Application
+3. Terminal Application (similar to Docker)
+
+------------------------------------------------------------------------------------------------------------------
+# Docker LLM (using chat1.py or chat2.py)
+
+First run:
+
+
+```bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce-cli
+```
+Then open your Docker_for_Desktop Application so that the contianer can be built.
+
+After run:
+```bash
+docker build -t newest .
+docker run -it --rm bitnet:latest
+```
+You should now be in the container. You can type "chat" to see what flags are avalable for you
+
+
+------------------------------------------------------------------------------------------------------------------
+# Web Page Application
+
+run "python3 chat/app.py"
+
+You will then see in the terminal that a url is being generated for your local host to run the webpage. There you can uploads your files and have the AI scan them for vunlerablilites. 
+
+------------------------------------------------------------------------------------------------------------------
+# Terminal Application (similar to Docker)
 
 Analyze a single file:
 
 ```bash
-python chat.py -f path/to/file.py
+python3 chat.py -f path/to/file.py
 ```
 
 Analyze an entire folder:
@@ -106,14 +146,31 @@ python chat.py --clear-log
 ## Project Structure
 
 ```
-BitNet/
-├─ chat.py                # Main analysis script
-├─ generate_dataset.py    # Script to create dataset JSONL from code samples
-├─ code_samples/          # Example code samples for dataset
-├─ tests/                 # Test files for each language
-├─ vuln_dataset.jsonl     # Dataset of known vulnerable patterns
-├─ chat_log.txt           # Log of all scans
-└─ README.md
+Machine_Learning_Project/
+├─ Dockerfile                 # Main Docker build configuration for containerizing the app
+├─ Dockerfile2.txt            # Alternate/experimental Dockerfile (possibly for testing variations)
+├─ README.md                  # Project documentation (Markdown version)
+├─ Scripts/                   # Helper scripts or automation utilities
+├─ UI/                        # Local user interface files (desktop or CLI-based UI)
+├─ User_Interface_WebSite/    # Frontend/backend code for the web-based interface
+├─ code_samples/              # Vulnerable and safe code samples used for AI training/learning
+├─ candidates.jsonl           # Stores candidate vulnerability patterns detected by AI
+├─ chat/                      # Core chat + analyzer package (chat.py, app.py, utilities)
+├─ chat1.py                   # Alternate version of chat analyzer script (used for offline Docker LLM with your Dataset)
+├─ chat2.py                   # Another alternate/testing version of chat analyzer script (Used for Online Docker LLM with other LLM Dataset)
+├─ chat_log.jsonl             # Log of all scans and their findings
+├─ dist/                      # Distribution/compiled output (for packaging the project)
+├─ pip-25.2.dist-info/        # Python package metadata (installed with pip)
+├─ requirements.txt           # Python dependencies required to run the project
+├─ rulepack_autoupdated.json  # Dynamic rulepack updated by AI self-learning system
+├─ stuff/                     # Miscellaneous files (uncategorized utilities/tests)
+├─ tests/                     # Test files for validating analyzer functionality
+├─ uploads/                   # User-uploaded files for analysis (via web app or UI)
+├─ vuln_dataset.csv           # Vulnerability dataset in CSV format (easy to read)
+├─ vuln_dataset.jsonl         # Vulnerability dataset in JSONL format (used by AI engine)
+├─ yaml_files/                # YAML configuration files for rulepacks or datasets
+
+
 ```
 
 ---
@@ -129,6 +186,3 @@ Contributions are welcome! You can:
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
