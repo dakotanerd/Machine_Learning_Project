@@ -3,7 +3,7 @@ import sys
 
 def main():
     print("======================================")
-    print("Welcome to BitNet Chat!")
+    print("Welcome to Chat!")
     print("Type 'chat -h' inside the container for help.")
     print("Press Ctrl+D or type 'exit' to close.\n")
     
