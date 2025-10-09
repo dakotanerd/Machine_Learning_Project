@@ -204,3 +204,8 @@ __marimo__/
 .streamlit/secrets.toml
 
 .DS_Store/
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/Machine_Learning_Project.iml
+.idea/inspectionProfiles/profiles_settings.xml
